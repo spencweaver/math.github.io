@@ -76,10 +76,10 @@
                 counter++;
                 console.log(counter);
                 document.querySelector('.report').innerHTML = '<span class="correct">Correct</span>';
-                document.querySelector('.image').innerHTML = '<img src="images/correct.jpeg" width="400px">'
+                document.querySelector('.image').innerHTML = '<img src="./images/correct.jpeg" width="400px">'
             } else {
                 document.querySelector('.report').innerHTML = '<span class="incorrect">Incorrect!</span>';
-                document.querySelector('.image').innerHTML = '<img src="images/incorrect.jpeg" width="400px">'
+                document.querySelector('.image').innerHTML = '<img src="./images/incorrect.jpeg" width="400px">'
             }
             document.querySelector('.counter').innerHTML = `Your score is ${counter}`;
 
