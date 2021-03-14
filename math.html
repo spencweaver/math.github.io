@@ -1,0 +1,97 @@
+<html lang="en">
+    <head>
+        <title>Xtra Math</title>
+    </head>
+    <body>
+        THIS IS THE BEST PROGRAM TO HELP KIDS LEARN THEIR MATH FACTS
+        <p class="counter"></p>
+        <p class="report"></p>
+        <div class="image">
+        </div>
+        <div>
+            <form>
+                <span class="math-fact"></span>
+                <input type="number" placeholder="answer" class="answer" autofocus>
+            </form>
+
+            
+        </div>
+
+        <!-- <img src="images/correct.jpeg" width="200px"> -->
+    </body>
+    
+    <style>
+        * {
+            background-color: white;
+            /* padding: 20px; */
+        }
+        .math-fact {
+            text-align: center;
+            font-size: 50px;
+            color:blue;
+        }
+
+        .answer {
+            height: 60px;
+            width: 200px;
+            background-color: lightgray;
+            font-size: 45;
+        }
+
+        .report {
+            font-size: 100px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .counter {
+            font-size: 50px;
+        }
+
+        
+    </style>
+    <script>
+        
+        let x = Math.floor(Math.random() * 10);
+        let y = Math.floor(Math.random() * 10);
+        let z = x * y;
+
+        var counter = 0;
+        document.querySelector('.counter').innerHTML = `Your score is ${counter}`;
+
+        document.querySelector('.math-fact').innerHTML = `${x} x ${y}=`;
+
+        document.querySelector('form').onsubmit = () => {
+            event.preventDefault();
+
+            answer = parseInt(document.querySelector('.answer').value);
+            if (z === answer) {
+                console.log("correct");
+                counter++;
+                console.log(counter);
+                document.querySelector('.report').innerHTML = '<span class="correct">Correct</span>';
+                document.querySelector('.image').innerHTML = '<img src="images/correct.jpeg" width="400px">'
+            } else {
+                document.querySelector('.report').innerHTML = '<span class="incorrect">Incorrect!</span>';
+                document.querySelector('.image').innerHTML = '<img src="images/incorrect.jpeg" width="400px">'
+            }
+            document.querySelector('.counter').innerHTML = `Your score is ${counter}`;
+
+            x = Math.floor(Math.random() * 10);
+            y = Math.floor(Math.random() * 10);
+            z = x * y;
+
+            document.querySelector('.math-fact').innerHTML = `${x} x ${y}=`;
+
+            document.querySelector('.answer').value = '';
+
+        }
+
+    </script>
+</html>
